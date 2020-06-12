@@ -15,12 +15,12 @@ build: [
 ]
 
 depends: [
-  "ocaml" {>= "4.02"}
+  "ocaml" {>= "4.04"}
   "dune"
   "uutf" {>= "1.0.0"}
   "re" {>= "1.5.0"}
   "alcotest" {with-test}
-  "ppx_tools_versioned"
+  "ppxlib"
 ]
 
 synopsis:"Common layer for the JSX and PPX syntaxes for Tyxml"

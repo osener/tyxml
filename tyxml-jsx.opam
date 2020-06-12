@@ -15,12 +15,12 @@ build: [
 ]
 
 depends: [
-  "ocaml" {>= "4.02"}
+  "ocaml" {>= "4.04"}
   "dune"
   "alcotest" {with-test}
   "tyxml" {= version}
   "tyxml-syntax" {= version}
-  "ppx_tools_versioned"
+  "ppxlib"
   "reason" {with-test}
 ]
 
