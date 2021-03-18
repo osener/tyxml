@@ -72,7 +72,7 @@ let make_txt ~loc ~lang s =
 let element_mapper transform_expr e =
   match e with
   (* Convert string constant into Html.txt "constant" for convenience *)
-  | { pexp_desc = Pexp_constant (Pconst_string (str, _)); pexp_loc = loc; _ } ->
+  | { pexp_desc = Pexp_constant (Pconst_string (str, _, _)); pexp_loc = loc; _ } ->
     make_txt ~loc ~lang:Html str
   | _ ->
     transform_expr e
@@ -109,7 +109,7 @@ type attr = {
 let rec extract_attr_value ~lang a_name a_value =
   let a_name = make_attr_name a_name in
   match a_value with
-  | { pexp_desc = Pexp_constant (Pconst_string (attr_value, _));
+  | { pexp_desc = Pexp_constant (Pconst_string (attr_value, _, _));
       _;
     } ->
     ((lang, a_name), Common.value attr_value)

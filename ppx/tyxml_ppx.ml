@@ -246,7 +246,7 @@ let ast_to_stream expressions =
   let strings =
     expressions |> List.map @@ fun expr ->
     match expr.pexp_desc with
-    | Pexp_constant (Pconst_string (s, delimiter)) ->
+    | Pexp_constant (Pconst_string (s, delimiter, _)) ->
       (s, Loc.string_start delimiter expr.pexp_loc)
     | _ ->
       (Antiquot.create expr, expr.pexp_loc.loc_start)
